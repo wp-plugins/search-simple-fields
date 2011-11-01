@@ -4,7 +4,7 @@ Donate link:
 Tags: admin, fields, custom fields, media fields, search
 Requires at least: 3.2.1
 Tested up to: 3.2.1
-Stable tag: 0.1
+Stable tag: 0.2
 
 Set custom fields to apply the Wordpress Search on.
 
@@ -51,4 +51,7 @@ See that "Add"-link above "Article images"? That means that it is repeatable, so
 
 = 0.1 =
 - First beta version.
+
+= 0.2 =
+- Added possibility to search in WordPress custom fields too
 

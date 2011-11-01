@@ -18,6 +18,7 @@ function search_simple_fields_options()
         $custom_fields_for_search   = (isset($_POST['custom_fields'])) ? $_POST['custom_fields'] : null;
         $media_function             = (isset($_POST[SSF_MEDIA_FUNCTION])) ? $_POST[SSF_MEDIA_FUNCTION] : '';
         $media_fields               = (isset($_POST['media_fields']) && array_filter($_POST['media_fields'])) ? $_POST['media_fields'] : null;
+        $wp_fields                  = (isset($_POST['wp_fields']) && trim($_POST['wp_fields']) != '') ? explode(';', $_POST['wp_fields']) : null;
         if(!is_null($post_types_for_search))
             update_option(SSF_POST_TYPES_FOR_SEARCH, $post_types_for_search);
         else
@@ -35,6 +36,11 @@ function search_simple_fields_options()
             update_option(SSF_MEDIA_FIELDS_FOR_SEARCH, $media_fields);
         else
             delete_option(SSF_MEDIA_FIELDS_FOR_SEARCH);
+
+        if(!is_null($wp_fields))
+            update_option(SSF_WP_FIELDS_FOR_SEARCH, $wp_fields);
+        else
+            delete_option(SSF_WP_FIELDS_FOR_SEARCH);
     endif;
     $old_post_types = get_option(SSF_POST_TYPES_FOR_SEARCH);
     $post_types = get_post_types('', 'objects');
@@ -107,8 +113,13 @@ function search_simple_fields_options()
     </ul>
         <?php endif;
     endif; ?>
-    <?php _e('Custom function you use to define custom media fields');?>: <input type="text" name="<?php echo SSF_MEDIA_FUNCTION;?>" size="40" value="<?php echo $media_function;?>"/>    
+    <?php _e('Custom function you use to define custom media fields');?>: <input type="text" name="<?php echo SSF_MEDIA_FUNCTION;?>" size="40" value="<?php echo $media_function;?>"/>
     </div>
+    <div class="ssf-horizontal-line"><!-- --></div>
+    <?php $old_wp_fields = get_option(SSF_WP_FIELDS_FOR_SEARCH); ?>
+    <div class="ssf-list-title"><?php _e('WordPress custom fields'); ?></div>
+    <p class="ssf-paragraph"><?php _e('Please write the custom fields\' names separated by semicolo (;).');?></p>
+    <textarea cols="50" rows="2" name="wp_fields"><?php echo (isset($old_wp_fields) && is_array($old_wp_fields)) ? implode(';', $old_wp_fields): ''; ?></textarea>
     <input type="submit" value="Save Changes" name="save-changes"/>
     </form>
 </div>

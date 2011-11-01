@@ -3,7 +3,7 @@
 Plugin Name: Search Simple Fields
 Plugin URI: http://elfdreamer.blogspot.com/2011/10/new-wordpress-plugin-search-simple.html
 Description: Allows user to search in different cusomt fields. It extends this plugin: <a href='http://eskapism.se/code-playground/simple-fields/' target='_blank'>Simple Fields</a>. Also let the user choose from Media custom fields or Wordpress custom fields.
-Version: 0.1
+Version: 0.2
 Author: SimonaIlie
 Author URI: http://elfdreamer.blogspot.com/
 License: GPL2
