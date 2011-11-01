@@ -1,0 +1,32 @@
+.ssf-warning-class
+{
+    font-size:1.2em;
+    padding: 20px 0;
+    color:#21759B;
+}
+
+.ssf-warning-class a,
+.ssf-warning-class a:link,
+.ssf-warning-class a:visited,
+.ssf-warning-class a:active
+{
+    color: #0066cc;
+}
+
+.ssf-list-title
+{
+    color: #21759B;
+    font-size:1.1em;
+    padding: 5px;
+    border:1px solid #21759B;
+    border-radius: 5px 5px 5px 5px;
+    margin: 18px 0 8px 0;
+    width: 250px;
+    background-color: #FFFFFF;
+}
+
+li.custom-field-item
+{
+    margin-left: 20px;
+}
+
